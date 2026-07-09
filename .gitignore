@@ -1,0 +1,33 @@
+# Build results
+bin/
+obj/
+.vs/
+
+# Visual Studio cache files
+.vscode/
+*.code-workspace
+
+# User-specific files
+*.user
+*.suo
+*.sln.docstates
+
+# Debug files
+*.pdb
+
+# Publish files
+publish/
+PublishProfiles/
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+
+# Local environment
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db

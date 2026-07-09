@@ -1,54 +1,128 @@
-# Freestyle Headshot AC - Aimbot para AssaultCube
+## 🎮 Freestyle Headshot AC - Aplicativo Desktop C#
 
-Aplicativo que detecta agachamento do jogador no AssaultCube e realiza snap automático para a cabeça do inimigo mais próximo com verificações de time, status e wall-check.
+### ✨ Características
 
-## Funcionalidades
+- ✅ Aplicativo Windows nativo (exe)
+- ✅ Interface gráfica intuitiva
+- ✅ Detecção automática de AssaultCube
+- ✅ Aimbot com snap para cabeça
+- ✅ Verificações avançadas (Team, Dead, Health, Wall)
+- ✅ Configurações personalizáveis em tempo real
+- ✅ Scanner de offsets de memória
+- ✅ Sem dependências Python
 
-- ✅ Detecção de processo AssaultCube
-- ✅ Notificação com PID ao iniciar
-- ✅ Detecção de agachamento do jogador
-- ✅ Snap automático para cabeça do inimigo mais próximo
-- ✅ Team check (não atira em aliados)
-- ✅ Dead check (não atira em mortos)
-- ✅ Wall check (detecta obstáculos)
-- ✅ Uso de offsets oficiais do jogo
+---
 
-## Como usar
+## 📦 Requisitos
 
-1. **Instale as dependências:**
+- **Windows 10/11** (64-bit ou 32-bit)
+- **.NET 6.0 Runtime** (ou superior)
+- **AssaultCube** instalado e em execução
+
+---
+
+## 🚀 Instalação Rápida
+
+1. **Baixar**
    ```bash
-   pip install -r requirements.txt
+   git clone https://github.com/nicolassantos000010-ui/Freestyle-headshot-ac.git
+   cd Freestyle-headshot-ac
    ```
 
-2. **Execute o aplicativo:**
+2. **Executar**
    ```bash
-   python main.py
+   dotnet run
    ```
 
-3. **Abra o AssaultCube**
+3. **Ou compilar executável**
+   ```bash
+   dotnet publish -c Release -r win-x64 --self-contained
+   ```
 
-4. O app notificará o PID quando detectar o jogo
+---
 
-5. **Agache** para ativar o aimbot automático
+## 📋 Estrutura do Projeto
 
-6. O snap será ativado automaticamente quando agachado
+```
+FreestyleHeadshot/
+├── FreestyleHeadshot.csproj    # Configuração do projeto
+├── Program.cs                   # Ponto de entrada
+├── MainForm.cs                  # Interface principal
+├── AimbotManager.cs             # Lógica do aimbot
+├── SettingsForm.cs              # Formulário de config
+├── ScannerForm.cs               # Scanner de offsets
+└── README.md                    # Este arquivo
+```
 
-## Arquivos do Projeto
+---
 
-- `main.py` - Script principal com lógica do aimbot
-- `config.py` - Configurações e offsets de memória
-- `wall_check.py` - Sistema de verificação de obstáculos
-- `memory_scanner.py` - Ferramentas para escanear offsets
-- `requirements.txt` - Dependências do projeto
+## 🎯 Como Usar
 
-## Offsets
+### 1. **Inicie o AssaultCube**
+   - O jogo deve estar aberto antes de usar o aimbot
 
-Os offsets de memória estão em `config.py` e devem ser atualizados conforme versões do AssaultCube.
+### 2. **Execute o Freestyle Headshot**
+   ```bash
+   dotnet run
+   ```
 
-Referências:
-- [UnknownCheats AC Forum](https://www.unknowncheats.me/forum/)
-- [AssaultCube Modding Wiki](https://assault.cubers.net/)
+### 3. **Clique em "Iniciar Aimbot"**
+   - O programa procurará automaticamente o AssaultCube
+   - Se encontrado, o status mudará para ✅ ATIVADO
+
+### 4. **Configure se necessário**
+   - Clique em "Configurações"
+   - Ajuste os valores desejados
+   - Clique em "Salvar"
+
+---
+
+## ⚙️ Configurações Disponíveis
+
+| Configuração | Padrão | Descrição |
+|---|---|---|
+| **Max Distance** | 100m | Distância máxima para detectar inimigos |
+| **Snap Speed** | 0.8 | Velocidade de mira (0.0-1.0) |
+| **Only on Crouch** | ✅ | Ativa aimbot apenas quando agachado |
+| **Team Check** | ✅ | Não mira em aliados |
+| **Dead Check** | ✅ | Ignora jogadores mortos |
+| **Wall Check** | ✅ | Verifica linha de visão |
+| **Health Check** | ✅ | Ignora jogadores sem saúde |
+| **FOV** | 180° | Campo de visão para detecção |
+
+---
+
+## 🔧 Offsets de Memória
+
+```
+PLAYERS_PTR:    0x0010F4F4
+POS_X:          0x0
+POS_Y:          0x4
+POS_Z:          0x8
+HEAD_HEIGHT:    1.7
+HEALTH:         0xF8
+ARMOR:          0xFC
+CROUCHING:      0x21C
+TEAM:           0x30
+ALIVE:          0x68
+CAMERA_YAW:     0x40
+CAMERA_PITCH:   0x44
+FOV:            0x50
+```
+
+---
 
 ## ⚠️ Aviso Legal
 
-Este projeto é apenas para fins educacionais. O uso em servidores online pode violar os termos de serviço do AssaultCube.
+- Este software é **apenas para propósitos educacionais**
+- O uso em **servidores online** pode violar os **Termos de Serviço**
+- Use por sua conta e risco
+
+---
+
+## 📞 Suporte
+
+- 💬 Abra uma Issue no GitHub
+- 📧 Verifique a discussão do projeto
+
+**Aproveite! 🎮**
